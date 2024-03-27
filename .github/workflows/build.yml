@@ -32,20 +32,20 @@ jobs:
         uses: timheuer/base64-to-file@v1.2.4
         with:
           fileName: openeuicc.keystore
-          fileDir: OpenEUICC
+          fileDir: openeuicc
           encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
           
       - name: Decode Secret Signing Configuration
         uses: timheuer/base64-to-file@v1.2.4
         with:
           fileName: keystore.properties
-          fileDir: OpenEUICC
+          fileDir: openeuicc
           encodedString: ${{ secrets.OPENEUICC_SIGNING_CONFIG }}
 
       - name: Add Keystore Path to Config
         run:  |
-          sudo chmod 666 OpenEUICC/keystore.properties
-          sudo echo "storeFile=${{ github.workspace }}/OpenEUICC/openeuicc.keystore" >> ${{ github.workspace }}/keystore.properties
+          sudo chmod 666 openeuicc/keystore.properties
+          sudo echo "storeFile=${{ github.workspace }}/openeuicc/openeuicc.keystore" >> ${{ github.workspace }}/keystore.properties
       
       - name: Build kernelsu-module-openeuicc
         run: bash build.sh
