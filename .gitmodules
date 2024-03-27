@@ -1,3 +1,4 @@
 [submodule "OpenEUICC"]
 	path = OpenEUICC
 	url = https://github.com/estkme-group/openeuicc.git
+	branch = master
