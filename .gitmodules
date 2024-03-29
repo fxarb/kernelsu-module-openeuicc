@@ -1,4 +1,4 @@
 [submodule "openeuicc"]
 	path = openeuicc
-	url = https://github.com/estkme-group/openeuicc.git
+	url = https://github.com/fxarb/openeuicc.git
 	branch = master
