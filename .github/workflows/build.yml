@@ -56,6 +56,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: module.zip
           asset_name: ksu-module-openeuicc.zip
-          tag: ${{ github.ref }}
+          tag: $(date +'%Y-%m-%dT%H:%M:%S')
           overwrite: true
           body: ${{ github.event.head_commit.message }}
